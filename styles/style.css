@@ -77,6 +77,7 @@ input{
 button{
     background-color: #f0b434;
     padding: 5px;
+    cursor: pointer;
 }
 .transaction{
     flex: 1;
@@ -86,8 +87,21 @@ button{
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
-.trans{
-    padding: 10px;
+.list{
+    padding: 1px;
+    font-weight: 700;
     display: flex;
     justify-content: space-between;
+    border: 2px solid#22222269;
+}
+.delete{
+    background-color: red;
+    cursor: pointer;
+}
+.amount-income{
+    color: green;
+    text-shadow: #2f3342;
+}
+.amount-expence{
+    color:  red;
 }
