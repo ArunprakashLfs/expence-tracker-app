@@ -59,12 +59,12 @@ function addvalue(){
         const transaction ={
             id: 222,
             inputEl : inputEl.value,
-            amountEl : amountEl.value;
+            amountEl : Number(amountEl.value),
         };
         transactions.push(transaction);
         loadtransaction(transaction);
-        inputEl.value ="";
-        amountEl.value;
+        inputEl.value = "";
+        amountEl.value = "";
         updateAmount();
     }
 }
