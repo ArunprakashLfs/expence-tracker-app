@@ -23,6 +23,7 @@ body{
     color: #fff;
     padding: 20px;
     flex: 1;
+    display: flex;
 }
 .transaction{
     flex: 1;
