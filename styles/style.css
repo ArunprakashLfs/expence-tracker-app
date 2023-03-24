@@ -81,3 +81,13 @@ button{
 .transaction{
     flex: 1;
 }
+.transaction h3{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.trans{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
