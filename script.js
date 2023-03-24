@@ -44,7 +44,13 @@ function updateAmount(){
     let totalBalance = amounts.reduce(((acc,val) => acc+=val),0);
     console.log(totalBalance);
     balanceEl.textContent = `₹${totalBalance}`;
-    
+
+    let incomeValue = amounts.filter((val)=> val > 0).reduce(((acc,val)=>acc+=val),0);
+    incomeEl.textContent =`₹${incomeValue}`;
+
+    let outcomeValue = amounts.filter((val)=> val < 0).reduce(((acc,val)=>acc+=val),0);
+    outcomeEl.textContent =`₹${outcomeValue}`;
+
 }
 function config(){
     listEl.innerHTML = "";
