@@ -49,7 +49,7 @@ function updateAmount(){
     incomeEl.textContent =`₹${incomeValue}`;
 
     let outcomeValue = amounts.filter((val)=> val < 0).reduce(((acc,val)=>acc+=val),0);
-    outcomeEl.textContent =`₹${outcomeValue}`;
+    outcomeEl.textContent =`₹${Math.abs(outcomeValue)}`;
 
 }
 function config(){
