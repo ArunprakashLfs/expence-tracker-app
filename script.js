@@ -52,6 +52,22 @@ function updateAmount(){
     outcomeEl.textContent =`₹${Math.abs(outcomeValue)}`;
 
 }
+function addvalue(){
+    if(inputEl.value.trim() == "" || amountEl.value.trim()==""){
+        alert("enter proper value")
+    }else{
+        const transaction ={
+            id: 222,
+            inputEl : inputEl.value,
+            amountEl : amountEl.value;
+        };
+        transactions.push(transaction);
+        loadtransaction(transaction);
+        inputEl.value ="";
+        amountEl.value;
+        updateAmount();
+    }
+}
 function config(){
     listEl.innerHTML = "";
     transactions.forEach(loadtransaction);
@@ -68,4 +84,5 @@ submitEl.addEventListener("click", function(e){
     let input = inputEl.value;
     let amount = amountEl.value;
     console.log(input, amount)
+    addvalue();
 })
