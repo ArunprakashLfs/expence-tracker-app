@@ -13,13 +13,17 @@ let outcomeEl = document.getElementById("outcome");
 //user display elements
 let listEl = document.getElementById("list");
 
-//dummydata
-let dummydata = [
-    {id: 1, inputEl: "flower", amountEl: -200},
-    {id: 2, inputEl: "salary", amountEl: 12000},
-]
-//function
-let transactions = dummydata;
+// //dummydata
+// let dummydata = [
+//     {id: 1, inputEl: "flower", amountEl: -200},
+//     {id: 2, inputEl: "salary", amountEl: 12000},
+// ]
+// //function
+// let transactions = dummydata;
+
+const localStorageData = JSON.parse(localStorage.getItem("value"));
+let transactions = localStorage.getItem("value") !== null? localStorageData : [];
+
 
 function loadtransaction(transaction){
     const sign = transaction.amountEl < 0 ? "-": "+";
@@ -37,6 +41,7 @@ function removeTrans(id){
     // console.log(id);
     transactions = transactions.filter((transaction)=> transaction.id != id);
     config();
+    updateStorage();
 }
 function updateAmount(){
     let amounts = transactions.map((transaction)=> transaction.amountEl);
@@ -66,6 +71,7 @@ function addvalue(){
         inputEl.value = "";
         amountEl.value = "";
         updateAmount();
+        updateStorage();
     }
 }
 function config(){
@@ -85,4 +91,9 @@ submitEl.addEventListener("click", function(e){
     let amount = amountEl.value;
     console.log(input, amount)
     addvalue();
+    updateStorage();
 })
+
+function updateStorage(){
+    localStorage.getItem("value", JSON.stringify(transactions));
+}
