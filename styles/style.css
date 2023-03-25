@@ -127,9 +127,26 @@ button{
     cursor: pointer;
 }
 .amount-income{
-    color: green;
+    color: rgb(147, 204, 147);
     text-shadow: #2f3342;
 }
 .amount-expence{
     color:  red;
 }
+@media only screen and (max-width: 600px) {
+    body{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+
+}
+    
