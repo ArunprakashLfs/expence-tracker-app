@@ -22,7 +22,8 @@ let listEl = document.getElementById("list");
 // let transactions = dummydata;
 
 const localStorageData = JSON.parse(localStorage.getItem("value"));
-let transactions = localStorage.getItem("value") !== null? localStorageData : [];
+let transactions = localStorage.getItem("value") !== null ? 
+localStorageData : [];
 
 
 function loadtransaction(transaction){
@@ -58,16 +59,17 @@ function updateAmount(){
 
 }
 function addvalue(){
-    if(inputEl.value.trim() == "" || amountEl.value.trim()==""){
+    if(inputEl.value.trim() == "" || amountEl.value.trim() == ""){
         alert("enter proper value")
     }else{
         const transaction ={
-            id: 222,
+            id: uniqueid(),
             inputEl : inputEl.value,
             amountEl : Number(amountEl.value),
         };
         transactions.push(transaction);
         loadtransaction(transaction);
+        id = "";
         inputEl.value = "";
         amountEl.value = "";
         updateAmount();
@@ -80,7 +82,10 @@ function config(){
     updateAmount();
 }
 
-
+function uniqueid(){
+    return Math.floor(Math.random() * 100000);
+    
+}
 //add Event listners
 window.addEventListener("load", function(){
     config()
@@ -95,5 +100,5 @@ submitEl.addEventListener("click", function(e){
 })
 
 function updateStorage(){
-    localStorage.getItem("value", JSON.stringify(transactions));
+    localStorage.setItem("value", JSON.stringify(transactions));
 }
