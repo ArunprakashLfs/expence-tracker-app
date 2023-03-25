@@ -11,6 +11,7 @@ body{
     place-items: center;
 }
 .container{
+    border-radius: 1rem;
     width: 800px;
     height: 500px;
     background-color: #fff;
@@ -19,6 +20,7 @@ body{
 
 }
 .ledger{
+    border-radius: 1rem;
     background-color: #2f3342;
     color: #fff;
     padding: 20px;
