@@ -149,6 +149,10 @@ button{
         width: 80%;
         margin: auto;
     }
+    .transaction{
+        background-color: #dfe6e9;
+    }
+
 
 }
     
